@@ -3,7 +3,15 @@ import "../FoodMarquee.css";
 import { apiGet, endpoints, onImgErrorFallback } from "../lib/api";
 import type { FoodCategory } from "../lib/api";
 
-interface MenuItem {
+interface UnifiedMenuItem {
+  _id?: string;
+  name?: string;
+  itemsAvailable?: number;
+  image?: string;
+  order?: number;
+}
+
+interface MenuItem extends UnifiedMenuItem {
   id: number;
   title: string;
   itemCount: number;
@@ -112,9 +120,9 @@ const FoodMarquee: React.FC<FoodMarqueeProps> = ({
     })();
   }, []);
 
-  // Normalize items to the shape expected by this component
-  const sourceItemsAny = (remoteItems && remoteItems.length > 0 ? remoteItems : menuItems) as unknown as Array<Record<string, any>>;
-  const normalized = sourceItemsAny.map((it, idx) => ({
+ 
+  const sourceItems = (remoteItems && remoteItems.length > 0 ? remoteItems : menuItems) as UnifiedMenuItem[];
+  const normalized = sourceItems.map((it, idx) => ({
     id: it._id || idx,
     title: it.title || it.name || `Item ${idx}`,
     itemCount: it.itemCount || it.itemsAvailable || 0,
