@@ -1,0 +1,96 @@
+/* Events Section Styles */
+
+/* Apply mask to opening container */
+.opening-container-wrap {
+  position: relative;
+  background-color: var(--theme-color2);
+  padding: 60px 80px;
+}
+
+.opening-container-wrap.bg-mask {
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.opening-container-wrap[data-mask-src] {
+  -webkit-mask-image: url("/assets/img/bg/opening-bg-mask.png");
+  mask-image: url("/assets/img/bg/opening-bg-mask.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Book your Table button */
+.book-table-btn {
+  display: inline-block;
+  padding: 18px 45px;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: var(--title-font);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+
+  /* Apply btn-shape.png as mask */
+  -webkit-mask-image: url("../assets/img/theme-img/btn-shape.png.");
+  mask-image: url("../assets/img/theme-img/btn-shape.png.");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.book-table-btn:hover {
+  background-color: #c3663f;
+  color: #ffffff;
+}
+
+/* Reflection animation on hover */
+.book-table-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 1s ease;
+  pointer-events: none;
+}
+
+.book-table-btn:hover::after {
+  left: 100%;
+}
+
+@media (max-width: 991px) {
+  .opening-container-wrap {
+    padding: 40px 30px;
+  }
+
+  .opening-container-wrap.bg-mask,
+  .opening-container-wrap[data-mask-src] {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}

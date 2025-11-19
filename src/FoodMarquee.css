@@ -1,0 +1,127 @@
+/* Minimal styles - let main.js handle Swiper initialization */
+.slider-area {
+  position: relative;
+  padding: 0 60px;
+  isolation: isolate;
+}
+
+.slider-area .slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: #3f9065;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.slider-area .slider-arrow:hover {
+  background: #c3663f;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-area .slider-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.slider-area .slider-prev {
+  left: 0;
+}
+
+.slider-area .slider-next {
+  right: 0;
+}
+
+.slider-area .slider-arrow img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+.slider-area .slider-arrow:hover img {
+  transform: scale(1.1);
+}
+
+.slider-area .slider-arrow.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Responsive arrow positioning */
+@media (max-width: 991px) {
+  .slider-area {
+    padding: 0 50px;
+  }
+
+  .slider-area .slider-arrow {
+    width: 45px;
+    height: 45px;
+  }
+
+  .slider-area .slider-arrow img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-area {
+    padding: 0 40px;
+  }
+
+  .slider-area .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .slider-area .slider-prev {
+    left: -5px;
+  }
+
+  .slider-area .slider-next {
+    right: -5px;
+  }
+
+  .slider-area .slider-arrow img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-area {
+    padding: 0 35px;
+  }
+
+  .slider-area .slider-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .slider-area .slider-prev {
+    left: -10px;
+  }
+
+  .slider-area .slider-next {
+    right: -10px;
+  }
+
+  .slider-area .slider-arrow img {
+    width: 14px;
+    height: 14px;
+  }
+}

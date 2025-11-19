@@ -1,0 +1,57 @@
+/* Testimonials Section Styles */
+
+#testi-sec {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.testi-area-1 {
+  overflow: visible !important;
+}
+
+/* Position hero-1-3.png behind left testimonial card */
+.testi-hero-decoration {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  z-index: 0;
+  width: 350px;
+  animation: jump-reverse 2s infinite;
+}
+
+.testi-hero-decoration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure testimonial cards are above the decoration */
+.testi-1-item {
+  position: relative;
+  z-index: 1;
+}
+
+/* Jump reverse animation */
+@keyframes jump-reverse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+  .testi-hero-shape {
+    width: 150px;
+    left: 2%;
+  }
+}
+
+@media (max-width: 991px) {
+  .testi-hero-shape {
+    display: none !important;
+  }
+}

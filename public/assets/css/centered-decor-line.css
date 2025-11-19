@@ -1,0 +1,15 @@
+/* Always center the green decorative line */
+.centered-decor-line {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100%;
+  margin: 0 auto 0.5rem auto;
+  max-width: 400px;
+}
+@media (max-width: 600px) {
+  .centered-decor-line {
+    max-width: 90vw;
+    margin-bottom: 0.5rem;
+  }
+}

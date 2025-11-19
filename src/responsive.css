@@ -1,0 +1,318 @@
+/* Global Responsive Styles for ITLU Restaurant Site */
+
+/* Base Responsive Container */
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 720px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Hide large screen only elements */
+  .d-none.d-xl-block {
+    display: none !important;
+  }
+
+  /* Adjust spacing */
+  .space {
+    padding: 60px 0;
+  }
+
+  .space-top {
+    padding-top: 60px;
+  }
+
+  .space-bottom {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Typography adjustments */
+  h1,
+  .h1 {
+    font-size: 32px !important;
+  }
+
+  h2,
+  .h2 {
+    font-size: 28px !important;
+  }
+
+  h3,
+  .h3 {
+    font-size: 22px !important;
+  }
+
+  h4,
+  .h4 {
+    font-size: 18px !important;
+  }
+
+  h5,
+  .h5 {
+    font-size: 16px !important;
+  }
+
+  h6,
+  .h6 {
+    font-size: 14px !important;
+  }
+
+  /* Adjust spacing */
+  .space {
+    padding: 50px 0;
+  }
+
+  .space-top {
+    padding-top: 50px;
+  }
+
+  .space-bottom {
+    padding-bottom: 50px;
+  }
+
+  /* Row adjustments */
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .row > * {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Center text on mobile */
+  .title-area {
+    text-align: center !important;
+  }
+
+  /* Button adjustments */
+  .th-btn,
+  .order-now-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Typography adjustments */
+  h1,
+  .h1 {
+    font-size: 26px !important;
+  }
+
+  h2,
+  .h2 {
+    font-size: 22px !important;
+  }
+
+  h3,
+  .h3 {
+    font-size: 18px !important;
+  }
+
+  /* Adjust spacing */
+  .space {
+    padding: 40px 0;
+  }
+
+  .space-top {
+    padding-top: 40px;
+  }
+
+  .space-bottom {
+    padding-bottom: 40px;
+  }
+
+  /* Full width columns on small screens */
+  .row > [class*="col-"] {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Button adjustments */
+  .th-btn,
+  .order-now-btn {
+    padding: 10px 25px;
+    font-size: 13px;
+    min-width: 150px;
+  }
+
+  /* Image responsiveness */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Header/Navbar responsive */
+@media (max-width: 991px) {
+  .header-logo img {
+    height: 50px !important;
+  }
+
+  .menu-area {
+    padding: 10px 0;
+  }
+
+  .main-menu {
+    display: none !important;
+  }
+}
+
+/* Gallery responsive */
+@media (max-width: 768px) {
+  .gallery-item,
+  .gallery-box {
+    margin-bottom: 15px;
+  }
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+  .footer-widget {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-text {
+    text-align: center;
+  }
+}
+
+/* Testimonials responsive */
+@media (max-width: 768px) {
+  .testimonial-card,
+  .testi-box {
+    margin-bottom: 20px;
+  }
+}
+
+/* Events section responsive */
+@media (max-width: 768px) {
+  .event-card,
+  .event-box {
+    margin-bottom: 20px;
+  }
+}
+
+/* Contact section responsive */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-info {
+    margin-bottom: 30px;
+  }
+}
+
+/* General responsive utilities */
+.responsive-hide-mobile {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .responsive-hide-mobile {
+    display: none !important;
+  }
+}
+
+.responsive-show-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .responsive-show-mobile {
+    display: block !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make videos responsive */
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Table responsive */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Form inputs responsive */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
