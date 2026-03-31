@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
-import "../Events.css";
+import "../Catering.css";
 import { apiGet, endpoints, onImgErrorFallback } from "../lib/api";
-import type { EventItem } from "../lib/api";
+import type { CateringItem } from "../lib/api";
 
-interface EventTiming {
-  days: string;
-  open: string;
-  close: string;
-}
-
-interface EventsProps {
+interface CateringProps {
   sectionSubtitle?: string;
   sectionTitle?: string;
-  eventImage?: string;
+  cateringImage?: string;
   videoLink?: string;
-  timings?: EventTiming[];
   buttonText?: string;
   buttonLink?: string;
   maskImages?: {
@@ -23,33 +16,19 @@ interface EventsProps {
   };
 }
 
-const defaultTimings: EventTiming[] = [
-  {
-    days: "Monday to Tuesday",
-    open: "10:00 AM",
-    close: "20:00 PM",
-  },
-  {
-    days: "Friday to Sunday",
-    open: "12:00 AM",
-    close: "23:00 PM",
-  },
-];
-
-const Events: React.FC<EventsProps> = ({
-  sectionSubtitle = "Events",
-  sectionTitle = "Our Events",
-  eventImage = "/assets/img/opening/opening-1-left.jpg",
+const Catering: React.FC<CateringProps> = ({
+  sectionSubtitle = "Catering",
+  sectionTitle = "Our Catering Services",
+  cateringImage = "/assets/img/opening/opening-1-left.jpg",
   videoLink = "https://www.youtube.com/watch?v=_sI_Ps7JSEk",
-  timings = defaultTimings,
-  buttonText = "Book your Table",
-  buttonLink = "/menu",
+  buttonText = "Contact Us for Catering",
+  buttonLink = "#contact-sec",
   maskImages = {
     container: "/assets/img/bg/opening-bg-mask.png",
     thumb: "/assets/img/bg/opening-1-mask.png",
   },
 }) => {
-  const [remoteEvent, setRemoteEvent] = useState<EventItem | null>(null);
+  const [remoteCatering, setRemoteCatering] = useState<CateringItem | null>(null);
 
   useEffect(() => {
     const applyMask = () => {
@@ -83,26 +62,23 @@ const Events: React.FC<EventsProps> = ({
     const timer = setTimeout(applyMask, 100);
     (async () => {
       try {
-        const items = await apiGet<EventItem[]>(endpoints.events);
-        if (items && items.length > 0) setRemoteEvent(items.sort((a, b) => a.order - b.order)[0]);
+        const items = await apiGet<CateringItem[]>(endpoints.catering);
+        if (items && items.length > 0) setRemoteCatering(items.sort((a, b) => a.order - b.order)[0]);
       } catch (err) {
-        console.warn("Failed to load events:", err);
+        console.warn("Failed to load catering:", err);
       }
     })();
 
     return () => clearTimeout(timer);
   }, []);
-  const finalEventImage = remoteEvent?.image || eventImage;
-  const finalTimings = remoteEvent
-    ? [
-        { days: "Monday to Thursday", open: remoteEvent.mondayToThursday.startTime, close: remoteEvent.mondayToThursday.endTime },
-        { days: "Friday to Saturday", open: remoteEvent.fridayToSaturday.startTime, close: remoteEvent.fridayToSaturday.endTime },
-      ]
-    : timings;
+
+  const finalCateringImage = remoteCatering?.image || cateringImage;
+  const finalTitle = remoteCatering?.title || sectionTitle;
+  const finalDescription = remoteCatering?.description || "We provide professional catering services for all your special occasions. From intimate gatherings to grand celebrations, our authentic vegetarian cuisine will delight your guests.";
 
   return (
     <div>
-      <section className="opening-sec-1 space overflow-hidden" id="events-sec">
+      <section className="opening-sec-1 space overflow-hidden" id="catering-sec">
         <div className="container">
           <div
             className="opening-container-wrap"
@@ -114,7 +90,7 @@ const Events: React.FC<EventsProps> = ({
                   className="opening-1-thumb"
                   data-mask-src={maskImages.thumb}
                 >
-                  <img src={finalEventImage} alt="img" onError={onImgErrorFallback(eventImage)} />
+                  <img src={finalCateringImage} alt="img" onError={onImgErrorFallback(cateringImage)} />
                   <div className="opening-1-video">
                     <a href={videoLink} className="play-btn popup-video"></a>
                   </div>
@@ -122,27 +98,18 @@ const Events: React.FC<EventsProps> = ({
               </div>
               <div className="col-xl-5">
                 <div className="opening-right">
-                  <div className="title-area text-center mb-60">
+                  <div className="title-area text-center mb-40">
                     <span className="sub-title text-anime-style-1">
                       {sectionSubtitle}
                     </span>
                     <h2 className="sec-title text-anime-style-2 text-white">
-                      {sectionTitle}
+                      {finalTitle}
                     </h2>
                   </div>
-                  <div
-                    className="time-table-wrap me-xl-5 wow fadeinup"
-                    data-wow-delay=".4s"
-                  >
-                    {finalTimings.map((item, idx) => (
-                      <div className="item" key={item.days + idx}>
-                        <p className="box-text">{item.days}</p>
-                        <div className="open-time">
-                          <h4 className="box-title">{item.open}</h4>
-                          <h4 className="box-title">{item.close}</h4>
-                        </div>
-                      </div>
-                    ))}
+                  <div className="catering-content text-center mb-40 wow fadeinup" data-wow-delay=".4s">
+                    <p className="text-white opacity-75">
+                      {finalDescription}
+                    </p>
                   </div>
                   <div
                     className="bottom text-center mt-40 wow fadeinup"
@@ -162,4 +129,4 @@ const Events: React.FC<EventsProps> = ({
   );
 };
 
-export default Events;
+export default Catering;

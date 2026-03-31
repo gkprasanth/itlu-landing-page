@@ -74,11 +74,10 @@ export type GalleryItem = {
 
 export type FaqItem = { question: string; answer: string; order: number };
 
-export type EventItem = {
+export type CateringItem = {
   image: string;
   title: string;
-  mondayToThursday: { startTime: string; endTime: string };
-  fridayToSaturday: { startTime: string; endTime: string };
+  description: string;
   order: number;
 };
 
@@ -143,7 +142,7 @@ export const endpoints = {
   howWeWork: "/api/how-we-work",
   gallery: "/api/gallery",
   faq: "/api/faq",
-  events: "/api/events",
+  catering: "/api/catering",
   contactSection: "/api/contact-section",
   footerContact: "/api/footer-contact",
   testimonials: "/api/testimonials",

@@ -1,6 +1,6 @@
 import About from "../components/About";
 import Contact from "../components/Contact";
-import Events from "../components/Events";
+import Catering from "../components/Catering";
 import FAQs from "../components/FAQs";
 import FoodMarquee from "../components/FoodMarquee";
 import Gallery from "../components/Gallery";
@@ -21,7 +21,7 @@ function Home() {
       <About />
       <MenuCard />
       <Gallery />
-      <Events />
+      <Catering />
       <Testimonials />
       <FAQs />
       <Contact

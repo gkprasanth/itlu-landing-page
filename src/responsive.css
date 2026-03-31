@@ -211,10 +211,10 @@
   }
 }
 
-/* Events section responsive */
+/* Catering section responsive */
 @media (max-width: 768px) {
-  .event-card,
-  .event-box {
+  .catering-content,
+  .catering-box {
     margin-bottom: 20px;
   }
 }

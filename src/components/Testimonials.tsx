@@ -54,15 +54,17 @@ const Testimonials: React.FC<TestimonialsProps> = ({
     heroDecoration: "/assets/img/icon/hero-1-3.png",
   },
 }) => {
-  const [remoteTestimonials, setRemoteTestimonials] = useState<TestimonialType[] | null>(null);
+  const [remoteTestimonials, setRemoteTestimonials] = useState<
+    TestimonialType[] | null
+  >(null);
 
   useEffect(() => {
     (async () => {
       try {
         const items = await apiGet<TestimonialType[]>(endpoints.testimonials);
-  // Helpful debug: log what we received from the API so you can confirm
-  // the backend returned the updated image URL.
-  console.info("Testimonials fetched from API:", items);
+        // Helpful debug: log what we received from the API so you can confirm
+        // the backend returned the updated image URL.
+        console.info("Testimonials fetched from API:", items);
         setRemoteTestimonials(items.sort((a, b) => a.order - b.order));
       } catch (err) {
         console.warn("Failed to load testimonials:", err);
@@ -70,14 +72,17 @@ const Testimonials: React.FC<TestimonialsProps> = ({
     })();
   }, []);
 
-  const finalTestimonials = remoteTestimonials && remoteTestimonials.length > 0 ? remoteTestimonials.map((r) => ({
-    name: r.name,
-    role: r.role,
-    text: r.text,
-    img: r.image,
-    quote: r.quoteImage || "/assets/img/icon/testi-1-quote.png",
-    stars: r.stars || 5,
-  })) : testimonials;
+  const finalTestimonials =
+    remoteTestimonials && remoteTestimonials.length > 0
+      ? remoteTestimonials.map((r) => ({
+          name: r.name,
+          role: r.role,
+          text: r.text,
+          img: r.image,
+          quote: r.quoteImage || "/assets/img/icon/testi-1-quote.png",
+          stars: r.stars || 5,
+        }))
+      : testimonials;
   return (
     <div>
       <section
@@ -89,13 +94,26 @@ const Testimonials: React.FC<TestimonialsProps> = ({
           className="shape-mockup d-none d-xxl-block jump"
           style={{ bottom: "2%", left: 0 }}
         >
-          <img src={decorationImages.topLeft} alt="img" onError={onImgErrorFallback(decorationImages.topLeft || "/assets/img/icon/testi-top-1-2.png")} />
+          {/* <img
+            src={decorationImages.topLeft}
+            alt="img"
+            onError={onImgErrorFallback(
+              decorationImages.topLeft || "/assets/img/icon/testi-top-1-2.png",
+            )}
+          /> */}
         </div>
         <div className="container" style={{ position: "relative" }}>
           {/* Hero shape positioned near left card */}
-          <div className="testi-hero-decoration">
-            <img src={decorationImages.heroDecoration} alt="decoration" onError={onImgErrorFallback(decorationImages.heroDecoration || "/assets/img/icon/hero-1-3.png")} />
-          </div>
+          {/* <div className="testi-hero-decoration">
+            <img
+              src={decorationImages.heroDecoration}
+              alt="decoration"
+              onError={onImgErrorFallback(
+                decorationImages.heroDecoration ||
+                  "/assets/img/icon/hero-1-3.png",
+              )}
+            />
+          </div> */}
 
           <div className="title-area text-center mb-60">
             <span className="sub-title text-anime-style-1">
@@ -106,12 +124,14 @@ const Testimonials: React.FC<TestimonialsProps> = ({
               <span className="text-theme">{titleHighlight}</span>
             </h2>
             <div className="centered-decor-line">
-                <img
-                  className="img-anime-style-1"
-                  src={titleDecorationImage}
-                  alt="img"
-                  onError={onImgErrorFallback(titleDecorationImage || "/assets/img/icon/title-shape.png")}
-                />
+              <img
+                className="img-anime-style-1"
+                src={titleDecorationImage}
+                alt="img"
+                onError={onImgErrorFallback(
+                  titleDecorationImage || "/assets/img/icon/title-shape.png",
+                )}
+              />
             </div>
           </div>
           <div className="row gy-40 gx-30">
@@ -122,10 +142,23 @@ const Testimonials: React.FC<TestimonialsProps> = ({
                   data-wow-delay=".3s"
                 >
                   <div className="client-thumb">
-                    <img src={t.img} alt="img" onError={onImgErrorFallback(t.img || "/assets/img/testimonial/testi-1-1.png")} />
+                    <img
+                      src={t.img}
+                      alt="img"
+                      onError={onImgErrorFallback(
+                        t.img || "/assets/img/testimonial/testi-1-1.png",
+                      )}
+                    />
                   </div>
                   <div className="content">
-                    <img className="testi-1-quote" src={t.quote} alt="icon" onError={onImgErrorFallback(t.quote || "/assets/img/icon/testi-1-quote.png")} />
+                    <img
+                      className="testi-1-quote"
+                      src={t.quote}
+                      alt="icon"
+                      onError={onImgErrorFallback(
+                        t.quote || "/assets/img/icon/testi-1-quote.png",
+                      )}
+                    />
                     <p className="box-text">"{t.text}"</p>
                   </div>
                   <div className="bottom">

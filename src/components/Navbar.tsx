@@ -7,7 +7,7 @@ const baseNavItems = [
   { label: "HOME", href: "/", order: 1 },
   { label: "ABOUT", href: "#about-sec", order: 2 },
   { label: "MENU", href: "#menu-sec", order: 3 },
-  { label: "Events", href: "#events-sec", order: 4 },
+  { label: "Catering", href: "#catering-sec", order: 4 },
   { label: "Gallery", href: "#gallery-sec-1", order: 5 },
   { label: "Testimonials", href: "#testi-sec", order: 6 },
   { label: "FAQs", href: "#faq-sec", order: 7 },
