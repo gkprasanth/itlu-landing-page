@@ -17,33 +17,33 @@ html {
   overflow: visible !important;
 }
 :root {
-  --theme-color: #c3663f;
-  --theme-color2: #3f9065;
-  --theme-color3: #c3663f;
-  --theme-color4: #c3663f;
-  --title-color: #121212;
-  --body-color: #6c6c6c;
-  --smoke-color: #f7f2e2;
-  --smoke-color2: #e9c590;
+  --theme-color: #8B4513;
+  --theme-color2: #3E2723;
+  --theme-color3: #A0522D;
+  --theme-color4: #D2691E;
+  --title-color: #261A13;
+  --body-color: #5D4037;
+  --smoke-color: #C19A6B;
+  --smoke-color2: #A67B5B;
   --smoke-color3: #f2f2f2;
-  --smoke-color4: #fde1b9;
+  --smoke-color4: #BCAAA4;
   --black-color: #000000;
-  --black-color2: #072f25;
+  --black-color2: #261A13;
   --black-color3: #171717;
-  --black-color4: #2f394a;
+  --black-color4: #3E2723;
   --black-color5: #22272e;
   --black-color6: #2d333d;
   --black-color7: #0e0e13;
   --gray-color: #bdbdbd;
-  --white-color: #ffffff;
+  --white-color: #FAF9F6;
   --light-color: #afb1c3;
-  --yellow-color: #ffb539;
+  --yellow-color: #FF8F00;
   --success-color: #28a745;
   --error-color: #dc3545;
-  --th-border-color: #d8dde1;
-  --th-border-color2: #9d9d9d;
-  --th-border-color3: #252a31;
-  --th-border-color4: #353b45;
+  --th-border-color: #A67B5B;
+  --th-border-color2: #8B4513;
+  --th-border-color3: #261A13;
+  --th-border-color4: #3E2723;
   --th-border-color5: #49515c;
   --th-border-color6: #383d46;
   --title-font: "Barlow Condensed", sans-serif;
@@ -56,7 +56,7 @@ html {
   --section-space-mobile: 80px;
   --section-title-space: 60px;
   --ripple-ani-duration: 5s;
-  --th-body-background: #ffffff;
+  --th-body-background: #F4EBD0;
 }
 
 html,
@@ -73,6 +73,24 @@ body {
   overflow-x: hidden;
   background: var(--th-body-background);
   -webkit-font-smoothing: antialiased;
+}
+
+.space {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+  background-color: var(--th-body-background);
+}
+
+.bg-smoke {
+  background-color: var(--smoke-color) !important;
+}
+
+.bg-white {
+  background-color: var(--white-color) !important;
+}
+
+.text-theme {
+  color: var(--theme-color) !important;
 }
 
 body::-webkit-scrollbar {

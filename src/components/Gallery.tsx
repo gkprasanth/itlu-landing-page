@@ -284,7 +284,7 @@ const Gallery: React.FC<GalleryProps> = ({
                 position: "absolute",
                 top: "-50px",
                 right: "0",
-                background: "#ffffff",
+                background: "var(--white-color)",
                 border: "none",
                 borderRadius: "50%",
                 width: "40px",
@@ -295,16 +295,16 @@ const Gallery: React.FC<GalleryProps> = ({
                 cursor: "pointer",
                 fontSize: "24px",
                 fontWeight: "bold",
-                color: "#000000",
+                color: "var(--black-color)",
                 transition: "all 0.3s ease",
                 zIndex: 100000,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#f0f0f0";
+                e.currentTarget.style.background = "var(--smoke-color2)";
                 e.currentTarget.style.transform = "scale(1.1)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#ffffff";
+                e.currentTarget.style.background = "var(--white-color)";
                 e.currentTarget.style.transform = "scale(1)";
               }}
             >

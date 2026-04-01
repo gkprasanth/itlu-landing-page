@@ -111,10 +111,10 @@ const FAQs: React.FC<FAQsProps> = ({
         key={globalIndex}
         style={{
           marginBottom: "20px",
-          border: "2px solid #e5e5e5",
+          border: "2px solid var(--th-border-color)",
           borderRadius: "8px",
           overflow: "hidden",
-          backgroundColor: "#fff",
+          backgroundColor: "var(--white-color)",
         }}
       >
         <button
@@ -122,8 +122,8 @@ const FAQs: React.FC<FAQsProps> = ({
           style={{
             width: "100%",
             padding: "20px 30px",
-            backgroundColor: isActive ? "#C19D60" : "#fff",
-            color: isActive ? "#fff" : "#1a1a1a",
+            backgroundColor: isActive ? "var(--theme-color)" : "var(--white-color)",
+            color: isActive ? "var(--white-color)" : "var(--title-color)",
             border: "none",
             textAlign: "left",
             fontSize: "18px",
@@ -161,7 +161,7 @@ const FAQs: React.FC<FAQsProps> = ({
             style={{
               margin: 0,
               paddingTop: isActive ? "20px" : "0",
-              color: "#666",
+              color: "var(--body-color)",
               fontSize: "16px",
               lineHeight: "1.6",
               fontFamily: '"Inter", sans-serif',

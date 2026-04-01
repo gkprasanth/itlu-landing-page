@@ -79,7 +79,7 @@
 
 .food-sec-1 .sub-title {
   font-size: 18px;
-  color: #c3663f !important;
+  color: var(--theme-color) !important;
   display: block !important;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .filter-menu button.btn-mask {
-  background: var(--smoke-color4) !important;
+  background: var(--smoke-color2) !important;
   padding: 11px 26px !important;
   border-radius: 0 !important;
   -webkit-mask-image: url(/assets/img/theme-img/btn-shape.png) !important;
@@ -160,7 +160,7 @@
 }
 
 .food-card-1.style-2.style-3 {
-  background: #f7f2e2;
+  background: var(--smoke-color);
   padding: 18px;
   padding-right: 12px;
   display: flex;
@@ -358,8 +358,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f5f5;
-  color: #000;
+  background: var(--smoke-color);
+  color: var(--title-color);
   text-decoration: none;
   border-radius: 5px;
   font-weight: 600;
@@ -368,8 +368,8 @@
 
 .th-pagination ul li a:hover,
 .th-pagination ul li.active a {
-  background: #3f9065;
-  color: #fff;
+  background: var(--theme-color);
+  color: var(--white-color);
 }
 
 /* Responsive */

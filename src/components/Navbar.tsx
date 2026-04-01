@@ -44,7 +44,7 @@ function Navbar({ value }: { value?: boolean }) {
     <div>
       <header className="th-header header-default">
         <div className="sticky-wrapper">
-          <div className="menu-area bg-[#3F9065] py-2">
+          <div className="menu-area bg-[var(--theme-color2)] py-2">
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between">
                 {/* Logo */}
@@ -64,7 +64,7 @@ function Navbar({ value }: { value?: boolean }) {
                   <ul className="flex gap-6 list-none m-0 p-0" style={{ fontFamily: 'var(--title-font)' }}>
                     {navItems.map((item) => (
                       <li key={item.label} className="list-none">
-                        <a className="text-white font-semibold hover:text-[#FFD700] transition uppercase" href={item.href}>
+                        <a className="text-white font-semibold hover:text-[var(--yellow-color)] transition uppercase" href={item.href}>
                           {item.label}
                         </a>
                       </li>
@@ -86,7 +86,7 @@ function Navbar({ value }: { value?: boolean }) {
                 <div className="lg:hidden flex items-center">
                   <button
                     type="button"
-                    className="flex items-center justify-center bg-transparent rounded-full min-w-[48px] min-h-[48px] w-12 h-12 border-2 border-[#FFD700] hover:bg-[#FFD700]/10 transition p-0"
+                    className="flex items-center justify-center bg-transparent rounded-full min-w-[48px] min-h-[48px] w-12 h-12 border-2 border-[var(--yellow-color)] hover:bg-[var(--yellow-color)]/10 transition p-0"
                     onClick={toggleMobileMenu}
                     aria-label="Toggle mobile menu"
                     style={{ borderRadius: '50%' }}

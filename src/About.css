@@ -2,7 +2,7 @@
 
 #about-sec {
   position: relative;
-  background: #fff;
+  background: var(--th-body-background);
   z-index: 1;
   overflow: visible !important;
 }
@@ -131,7 +131,7 @@ img[src="/assets/img/about/about_1_1.png"] {
 
 .process-sec-2-container-wrap {
   position: relative;
-  background-color: #3f9065;
+  background-color: var(--theme-color2);
   padding: 80px 100px;
   margin-left: -100px;
   margin-right: -100px;
@@ -146,7 +146,7 @@ img[src="/assets/img/about/about_1_1.png"] {
   mask-repeat: no-repeat !important;
   -webkit-mask-position: center center !important;
   mask-position: center center !important;
-  background-color: #3f9065 !important;
+  background-color: var(--theme-color2) !important;
 }
 
 /* Also apply mask directly if bg-mask class not added yet */
