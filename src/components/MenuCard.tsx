@@ -124,8 +124,8 @@ const MenuCard: React.FC<MenuCardProps> = ({
   titleDecorationImage = "/assets/img/icon/title-shape.png",
   tabs = ["breakfast", "lunch", "dinner", "snacks"],
   menuImages = {
-    left: "/assets/img/menu/menu-1-1.jpg",
-    right: "/assets/img/menu/menu-1-2.jpg",
+    left: "/menu-left.jpeg",
+    right: "/menu-right.jpeg",
   },
   viewAllButtonText = "View All Menu",
   viewAllButtonLink = "/menu",
@@ -167,7 +167,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
             imageUrl: it.imageUrl || it.image || "",
             categories: it.categories || [],
             fallbackImagePath: it.fallbackImagePath,
-          }))
+          })),
         );
       } catch (error) {
         console.error("Error fetching menu:", error);
@@ -260,7 +260,10 @@ const MenuCard: React.FC<MenuCardProps> = ({
                             <img
                               src={item.imageUrl}
                               alt={item.title}
-                              onError={onImgErrorFallback(item.fallbackImagePath || "/assets/img/menu/menu-1-item-1-1.jpg")}
+                              onError={onImgErrorFallback(
+                                item.fallbackImagePath ||
+                                  "/assets/img/menu/menu-1-item-1-1.jpg",
+                              )}
                             />
                           </div>
                           <div className="content">

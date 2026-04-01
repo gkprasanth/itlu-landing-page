@@ -59,7 +59,15 @@ const Hero: React.FC<HeroProps> = ({
     <div className="">
       <div className="th-hero-wrapper hero-1 bg-smoke" id="hero">
         <div className="hero-img-shape-1">
-          <div className="logo-icon-wrap">
+          <div className="logo-icon-wrap relative">
+            {/* Rotating Mandala Background */}
+            <div
+              className="mandala-bg-rotate"
+              style={{ width: "280px", height: "280px" }}
+            >
+              <img src="/order-now-mandala.png" alt="Order Now Mandala" />
+            </div>
+
             <div className="logo-icon mb-4">
               <h4 className="order">
                 <a href={orderButtonLink}>{orderButtonText}</a>
@@ -108,9 +116,7 @@ const Hero: React.FC<HeroProps> = ({
         >
           <img src={shapeImages.shape4} alt="img" />
         </div>
-        <div
-          className="shape-mockup jump hero-shape-1-5"
-        >
+        <div className="shape-mockup jump hero-shape-1-5">
           <img src={shapeImages.shape5} alt="img" />
         </div>
 
@@ -127,7 +133,11 @@ const Hero: React.FC<HeroProps> = ({
                     {finalMainTitle}
                   </h1>
                   <div className="hero-img1 gsap-scale-up-fade">
-                    <img src={finalHeroImage} alt={heroImageAlt} onError={onImgErrorFallback(heroImage)} />
+                    <img
+                      src={finalHeroImage}
+                      alt={heroImageAlt}
+                      onError={onImgErrorFallback(heroImage)}
+                    />
                   </div>
                 </div>
               </div>

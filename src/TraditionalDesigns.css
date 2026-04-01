@@ -1,0 +1,129 @@
+/* Mandala Rotation Animation */
+@keyframes rotate-mandala {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Drawing Animation for Borders */
+@keyframes draw-border {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.mandala-container {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  animation: rotate-mandala 60s linear infinite;
+}
+
+.mandala-top-right {
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+}
+
+.mandala-bottom-left {
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+}
+
+.traditional-border {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.6;
+}
+
+.kolam-border-container {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  padding: 10px 0;
+  margin: 5px 0;
+  background-image: radial-gradient(
+    var(--theme-color) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 20px 20px;
+  background-position: center;
+  position: relative;
+}
+
+.kolam-border-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--th-body-background),
+    transparent
+  );
+  width: 200%;
+  animation: shine-border 10s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes shine-border {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-kolam path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-border 5s ease-out forwards;
+}
+
+/* Floating Animation for Mandala */
+.mandala-float {
+  animation:
+    rotate-mandala 40s linear infinite,
+    float-subtle 6s ease-in-out infinite alternate;
+}
+
+@keyframes float-subtle {
+  from {
+    transform: rotate(0deg) translateY(0px);
+  }
+  to {
+    transform: rotate(10deg) translateY(-20px);
+  }
+}
+
+.mandala-bg-rotate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.mandala-bg-rotate img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: rotate-mandala 20s linear infinite;
+  opacity: 0.8;
+}

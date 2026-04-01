@@ -115,13 +115,16 @@ const About: React.FC<AboutProps> = ({
   const finalSectionTitle = aboutRemote?.rightTitle2 || sectionTitle;
   const finalTitleHighlight = aboutRemote?.legendTitle || titleHighlight;
   const finalDescription = aboutRemote?.description || description;
-  const finalProcessSteps = howItems.length > 0 ? howItems.map((it, idx) => ({
-    number: String(idx + 1).padStart(2, '0'),
-    title: it.title,
-    description: it.description,
-    image: it.image,
-    delay: `.${(idx + 1) * 2}s`,
-  })) : processSteps;
+  const finalProcessSteps =
+    howItems.length > 0
+      ? howItems.map((it, idx) => ({
+        number: String(idx + 1).padStart(2, "0"),
+        title: it.title,
+        description: it.description,
+        image: it.image,
+        delay: `.${(idx + 1) * 2}s`,
+      }))
+      : processSteps;
   useEffect(() => {
     const applyMask = () => {
       const outerMaskElement = document.querySelector(
@@ -152,18 +155,58 @@ const About: React.FC<AboutProps> = ({
         <div className="container">
           <div className="row gy-40 gx-80 align-items-center">
             <div className="col-xl-7 ps-xl-5">
-                <div className="img-box1 ms-xl-2">
-                <div className="img gsap-fade-left">
-                  <img src={finalAboutImage} alt={aboutImageAlt} onError={onImgErrorFallback(aboutImage)} />
+              <div className="img-box1 ms-xl-2 flex justify-center xl:justify-start">
+                <div className="relative inline-block gsap-fade-left">
+                  {/* Rotating Mandala Background - Perfectly Centered on Image */}
+                  <div
+                    className="mandala-bg-rotate"
+                    style={{
+                      position: "absolute",
+                      width: "130%",
+                      height: "130%",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      opacity: 0.35,
+                      zIndex: 0,
+                      pointerEvents: "none",
+                    }}
+                  >
+                    <img
+                      src="/order-now-mandala.png"
+                      alt="Mandala Decor"
+                      style={{ width: "100%", height: "100%", objectFit: "contain", marginLeft: "20px" }}
+                    />
+                  </div>
+                  <img
+                    src={finalAboutImage}
+                    alt={aboutImageAlt}
+                    className="relative z-10"
+                    style={{ display: "block" }}
+                    onError={onImgErrorFallback(aboutImage)}
+                  />
                 </div>
               </div>
             </div>
             <div className="col-xl-5 position-relative">
               <div className="shape-mockup jump-reverse d-none d-xl-block about-shape-left">
-                <img src={shapeImages.left} alt="img" onError={onImgErrorFallback(shapeImages.left || "/assets/img/shape/about-shape-1.1.png")} />
+                <img
+                  src={shapeImages.left}
+                  alt="img"
+                  onError={onImgErrorFallback(
+                    shapeImages.left || "/assets/img/shape/about-shape-1.1.png",
+                  )}
+                />
               </div>
               <div className="shape-mockup jump d-none d-xl-block about-shape-right">
-                <img src={shapeImages.right} alt="img" onError={onImgErrorFallback(shapeImages.right || "/assets/img/shape/about-shape-1.2.png")} />
+                <img
+                  src={shapeImages.right}
+                  alt="img"
+                  onError={onImgErrorFallback(
+                    shapeImages.right ||
+                    "/assets/img/shape/about-shape-1.2.png",
+                  )}
+                />
               </div>
               <div className="title-area mb-1">
                 <span className="sub-title text-anime-style-1">
@@ -234,7 +277,16 @@ const About: React.FC<AboutProps> = ({
                           data-wow-delay={step.delay}
                         >
                           <div className="box-img">
-                            <img src={step.image} alt="icon" onError={onImgErrorFallback(defaultProcessSteps[index % defaultProcessSteps.length]?.image || "/assets/img/process/process-3-1.png")} />
+                            <img
+                              src={step.image}
+                              alt="icon"
+                              onError={onImgErrorFallback(
+                                defaultProcessSteps[
+                                  index % defaultProcessSteps.length
+                                ]?.image ||
+                                "/assets/img/process/process-3-1.png",
+                              )}
+                            />
                           </div>
                           <div className="content">
                             <p className="box-number">{step.number}</p>

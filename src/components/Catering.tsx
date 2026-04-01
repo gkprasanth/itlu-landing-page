@@ -19,7 +19,7 @@ interface CateringProps {
 const Catering: React.FC<CateringProps> = ({
   sectionSubtitle = "Catering",
   sectionTitle = "Our Catering Services",
-  cateringImage = "/assets/img/opening/opening-1-left.jpg",
+  cateringImage = "/catering.jpeg",
   videoLink = "https://www.youtube.com/watch?v=_sI_Ps7JSEk",
   buttonText = "Contact Us for Catering",
   buttonLink = "#contact-sec",
