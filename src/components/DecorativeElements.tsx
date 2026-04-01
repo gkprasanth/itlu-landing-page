@@ -64,9 +64,9 @@ export const KolamBorder: React.FC<{
     style={{ opacity: 0.8, ...style }}
   >
     <svg
-      viewBox="0 0 1000 60"
+      viewBox="0 0 1000 32"
       xmlns="http://www.w3.org/2000/svg"
-      className="traditional-border animate-kolam"
+      className="traditional-border"
       preserveAspectRatio="none"
     >
       <defs>
@@ -74,22 +74,21 @@ export const KolamBorder: React.FC<{
           id="kolam-pattern"
           x="0"
           y="0"
-          width="100"
-          height="60"
+          width="26"
+          height="32"
           patternUnits="userSpaceOnUse"
         >
-          <path
-            d="M20 30 C20 10 40 10 50 30 C60 50 80 50 80 30 C80 10 60 10 50 30 C40 50 20 50 20 30"
-            fill="none"
-            stroke="var(--theme-color)"
-            strokeWidth="1.5"
+          <image
+            href="/kolam-img.png"
+            x="0"
+            y="0"
+            width="32"
+            height="32"
+            preserveAspectRatio="xMidYMid meet"
           />
-          <circle cx="20" cy="30" r="1.5" fill="var(--theme-color2)" />
-          <circle cx="50" cy="30" r="1.5" fill="var(--theme-color2)" />
-          <circle cx="80" cy="30" r="1.5" fill="var(--theme-color2)" />
         </pattern>
       </defs>
-      <rect width="1000" height="60" fill="url(#kolam-pattern)" />
+      <rect width="1000" height="32" fill="url(#kolam-pattern)" />
     </svg>
   </div>
 );

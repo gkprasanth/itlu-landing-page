@@ -49,10 +49,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({
   titleHighlight = "Love Our Veg Cuisine",
   testimonials = defaultTestimonials,
   titleDecorationImage = "/assets/img/icon/title-shape.png",
-  decorationImages = {
-    topLeft: "/assets/img/icon/testi-top-1-2.png",
-    heroDecoration: "/assets/img/icon/hero-1-3.png",
-  },
 }) => {
   const [remoteTestimonials, setRemoteTestimonials] = useState<
     TestimonialType[] | null
@@ -141,15 +137,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({
                   className={`testi-1-item wow ${idx % 2 === 0 ? "fadeinleft" : "fadeinright"}`}
                   data-wow-delay=".3s"
                 >
-                  <div className="client-thumb">
-                    <img
-                      src={t.img}
-                      alt="img"
-                      onError={onImgErrorFallback(
-                        t.img || "/assets/img/testimonial/testi-1-1.png",
-                      )}
-                    />
-                  </div>
                   <div className="content">
                     <img
                       className="testi-1-quote"
@@ -163,7 +150,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({
                   </div>
                   <div className="bottom">
                     <h4 className="box-title">{t.name}</h4>
-                    <p>{t.role} </p>
                     <div className="th-social">
                       {Array.from({ length: t.stars }).map((_, i) => (
                         <i className="fa-solid fa-star" key={i}></i>

@@ -23,7 +23,7 @@ function Home() {
       <Navbar value={true} />
 
       <div className="relative">
-        <MandalaSVG className="mandala-top-right mandala-float" />
+        <MandalaSVG className="mandala-top-right mandala-float margin-top-40" />
         <Hero />
         <KolamBorder />
       </div>
@@ -39,9 +39,11 @@ function Home() {
       <MenuCard />
 
       <div className="relative">
-        <KolamBorder style={{ transform: "rotate(180deg)" }} />
+        <KolamBorder
+          style={{ transform: "rotate(180deg)", marginTop: "-20px" }}
+        />
         <Gallery />
-        <KolamBorder />
+        <KolamBorder style={{ marginTop: "20px" }} />
       </div>
 
       <div className="relative">
@@ -63,7 +65,7 @@ function Home() {
       <FAQs />
 
       <div className="relative bg-smoke">
-        <KolamBorder />
+        <KolamBorder style={{ marginTop: "20px" }} />
         <Contact
           sectionTitle="Contact"
           titleHighlight="Our Veg Restaurant"

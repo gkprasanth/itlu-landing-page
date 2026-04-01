@@ -1,7 +1,7 @@
 import CircularText from "./CircularText";
 import "../Hero.css";
 import { useEffect, useState } from "react";
-import { apiGet, endpoints, onImgErrorFallback } from "../lib/api";
+import { apiGet, endpoints } from "../lib/api";
 import type { HeroSection } from "../lib/api";
 
 interface HeroProps {
@@ -11,8 +11,6 @@ interface HeroProps {
   circularTextSpinDuration?: number;
   subTitle?: string;
   mainTitle?: string;
-  heroImage?: string;
-  heroImageAlt?: string;
   shapeImages?: {
     shape1?: string;
     shape2?: string;
@@ -29,8 +27,6 @@ const Hero: React.FC<HeroProps> = ({
   circularTextSpinDuration = 20,
   subTitle = "Traditional Veg Flavors",
   mainTitle = "Authentic Vegetarian Cuisine",
-  heroImage = "assets/img/hero/hero-img.png",
-  heroImageAlt = "Image",
   shapeImages = {
     shape1: "assets/img/icon/hero-1-1.png",
     shape2: "assets/img/icon/hero-1-2.png",
@@ -52,7 +48,6 @@ const Hero: React.FC<HeroProps> = ({
     })();
   }, []);
 
-  const finalHeroImage = remote?.backgroundImage || heroImage;
   const finalSubTitle = remote?.title1 || subTitle;
   const finalMainTitle = remote?.title2 || mainTitle;
   return (
@@ -133,11 +128,18 @@ const Hero: React.FC<HeroProps> = ({
                     {finalMainTitle}
                   </h1>
                   <div className="hero-img1 gsap-scale-up-fade">
-                    <img
-                      src={finalHeroImage}
-                      alt={heroImageAlt}
-                      onError={onImgErrorFallback(heroImage)}
-                    />
+                    <div className="hero-mandala-container">
+                      <img
+                        src="/order-now-mandala.png"
+                        alt="Mandala Background"
+                        className="hero-mandala-bg"
+                      />
+                      <img
+                        src="/assets/img/logo.png"
+                        alt="Logo"
+                        className="hero-logo-center"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

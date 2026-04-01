@@ -29,6 +29,72 @@
 .testi-1-item {
   position: relative;
   z-index: 1;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.testi-1-item .client-thumb {
+  display: none !important;
+}
+
+.testi-1-item .content {
+  padding: 60px 40px 80px 40px !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  border-radius: 150px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  flex-grow: 1 !important;
+  background: var(--smoke-color) !important;
+}
+
+.testi-1-item .content .box-text {
+  width: 100% !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  color: var(--black-color) !important;
+  margin: 0 !important;
+}
+
+.testi-1-item .content .testi-1-quote {
+  position: relative !important;
+  left: auto !important;
+  top: 0 !important;
+  margin-bottom: 20px !important;
+  display: inline-block !important;
+  width: 60px !important;
+  height: auto !important;
+}
+
+.testi-1-item .bottom {
+  width: fit-content !important;
+  min-width: 250px !important;
+  padding: 20px 40px !important;
+  margin: -40px auto 0 !important;
+  text-align: center !important;
+  background: var(--theme-color2) !important;
+  border-radius: 50px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.testi-1-item .bottom .box-title {
+  color: var(--white-color) !important;
+  margin-bottom: 5px !important;
+}
+
+.testi-1-item .bottom p {
+  color: var(--white-color) !important;
+  margin-bottom: 10px !important;
+  opacity: 0.8;
+}
+
+.testi-1-item .bottom .th-social i {
+  color: var(--yellow-color) !important;
+  margin: 0 2px !important;
 }
 
 /* Jump reverse animation */
