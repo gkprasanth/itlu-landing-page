@@ -50,16 +50,16 @@ const Hero: React.FC<HeroProps> = ({
 
   const finalSubTitle = remote?.title1 || subTitle;
   const finalMainTitle = remote?.title2 || mainTitle;
+
   return (
     <div className="">
       <div className="th-hero-wrapper hero-1 bg-smoke" id="hero">
-        <div className="hero-img-shape-1">
+
+        {/* Circular text + Order button — hidden on mobile, shown tablet+ */}
+        <div className="hero-img-shape-1 hero-circular-block">
           <div className="logo-icon-wrap relative">
             {/* Rotating Mandala Background */}
-            <div
-              className="mandala-bg-rotate"
-              style={{ width: "280px", height: "280px" }}
-            >
+            <div className="mandala-bg-rotate">
               <img src="/order-now-mandala.png" alt="Order Now Mandala" />
             </div>
 
@@ -76,21 +76,23 @@ const Hero: React.FC<HeroProps> = ({
             />
           </div>
         </div>
+
+        {/* Decorative shape mockups — hidden on small screens */}
         <div
-          className="shape-mockup movingX hero-shape-1-1"
+          className="shape-mockup movingX hero-shape-1-1 hero-shape-hide-mobile"
           data-top="0%"
           data-right="5%"
         >
           <img src={shapeImages.shape1} alt="img" />
         </div>
         <div
-          className="shape-mockup movingX hero-shape-1-2"
+          className="shape-mockup movingX hero-shape-1-2 hero-shape-hide-mobile"
           style={{ top: "15%", right: "100%" }}
         >
           <img src={shapeImages.shape1} alt="img" />
         </div>
         <div
-          className="shape-mockup hero-shape-1-2 gsap-scroll-rotate"
+          className="shape-mockup hero-shape-1-2 gsap-scroll-rotate hero-shape-hide-mobile"
           data-top="35%"
           data-left="1%"
           style={{ top: "15%", left: "1%" }}
@@ -98,20 +100,13 @@ const Hero: React.FC<HeroProps> = ({
           <img src={shapeImages.shape2} alt="img" />
         </div>
         <div
-          className="shape-mockup jump-reverse hero-shape-1-3"
-          data-top="5%"
-          data-right="3%"
-        >
-          <img src={shapeImages.shape3} alt="img" />
-        </div>
-        <div
-          className="shape-mockup movingX hero-shape-1-4"
+          className="shape-mockup movingX hero-shape-1-4 hero-shape-hide-mobile"
           data-bottom="0%"
           data-left="5%"
         >
           <img src={shapeImages.shape4} alt="img" />
         </div>
-        <div className="shape-mockup jump hero-shape-1-5">
+        <div className="shape-mockup jump hero-shape-1-5 hero-shape-hide-mobile">
           <img src={shapeImages.shape5} alt="img" />
         </div>
 
@@ -124,7 +119,6 @@ const Hero: React.FC<HeroProps> = ({
                     {finalSubTitle}
                   </span>
                   <h1 className="hero-title text-anime-style-2">
-                    {" "}
                     {finalMainTitle}
                   </h1>
                   <div className="hero-img1 gsap-scale-up-fade">
@@ -140,6 +134,13 @@ const Hero: React.FC<HeroProps> = ({
                         className="hero-logo-center"
                       />
                     </div>
+                  </div>
+
+                  {/* Order Now button shown only on mobile (below mandala) */}
+                  <div className="hero-mobile-order">
+                    <a href={orderButtonLink} className="hero-mobile-order-btn">
+                      {orderButtonText}
+                    </a>
                   </div>
                 </div>
               </div>

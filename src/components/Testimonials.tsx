@@ -26,17 +26,17 @@ interface TestimonialsProps {
 
 const defaultTestimonials: Testimonial[] = [
   {
-    name: "Prabhas",
-    role: "Hero",
-    text: "The thali here reminded me of my grandmother's kitchen. Every dish was bursting with flavor and tradition!",
+    name: "Richard Chuang",
+    role: "Customer",
+    text: "The food here is wonderfully authentic and absolutely delicious! I love this place! Although I am not as familiar with the Indian cuisine, but I see all other guests are Indians, so I’m more confident that the food must be authentic enough without too much of localized modifications. The dosa is a must-try. The décor is modern yet filled with vibrant Indian touches. The curries and spices are excellent, though some dishes might be a bit spicy for kids who aren’t used to Indian food. The staff are efficient, polite, and incredibly friendly. As first-time visitors still exploring the menu, we really appreciated how helpful and welcoming they were.",
     img: "/assets/img/testimonial/testi-1-1.png",
     quote: "/assets/img/icon/testi-1-quote.png",
     stars: 5,
   },
   {
-    name: "Sai Pallavi",
-    role: "Heroine",
-    text: "As a vegetarian, I finally found a place that celebrates authentic Indian food. The dosas and sweets are a must-try!",
+    name: "Viraj Wadhwa",
+    role: "Customer",
+    text: "Incredible 10/10 all veg south indian food. I especially loved the paneer tikka kebab, vada, curry leaf mushroom, veggie uttappam, and filtered coffee, but everything was solid. They have lots of options. Highly recommend this place, don't miss it",
     img: "/assets/img/testimonial/testi-1-2.png",
     quote: "/assets/img/icon/testi-1-quote.png",
     stars: 5,
